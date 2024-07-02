@@ -1,30 +1,28 @@
 package day12.exersise.ClassManagement.Entity;
 
-import java.util.Date;
 
-public class Student {
-    private String idStudent;
+import java.time.LocalDate;
+
+public class Student extends Entity{
+    private static int idCounter = 1;
     private String nameStudent;
-    private Date DoBStudent;
+    private LocalDate birthDayStudent;
     private String cccd;
-    private String status;
+    private LocalDate enrollDay;
 
-    public Student() {}
-
-    public Student(String idStudent, String nameStudent,Date DobStudent, String cccd, String status) {
-        this.idStudent = idStudent;
+    public Student(String nameStudent, LocalDate birthDayStudent, String cccd, LocalDate enrollDay) {
+        this.id = "S" + idCounter;
         this.nameStudent = nameStudent;
-        this.DoBStudent = DobStudent;
+        this.birthDayStudent = birthDayStudent;
         this.cccd = cccd;
-        this.status = status;
     }
 
-    public String getIdStudent() {
-        return idStudent;
+    public static int getIdCounter() {
+        return idCounter;
     }
 
-    public void setIdStudent(String idStudent) {
-        this.idStudent = idStudent;
+    public static void setIdCounter(int idCounter) {
+        Student.idCounter = idCounter;
     }
 
     public String getNameStudent() {
@@ -35,12 +33,12 @@ public class Student {
         this.nameStudent = nameStudent;
     }
 
-    public Date getDoBStudent() {
-        return DoBStudent;
+    public LocalDate getBirthDayStudent() {
+        return birthDayStudent;
     }
 
-    public void setDoBStudent(Date doBStudent) {
-        DoBStudent = doBStudent;
+    public void setBirthDayStudent(LocalDate birthDayStudent) {
+        this.birthDayStudent = birthDayStudent;
     }
 
     public String getCccd() {
@@ -51,21 +49,11 @@ public class Student {
         this.cccd = cccd;
     }
 
-    public String getStatus() {
-        return status;
+    public LocalDate getEnrollDay() {
+        return enrollDay;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    @Override
-    public String toString() {
-        return "Student{" +
-                "idStudent=" + idStudent +
-                ", nameStudent='" + nameStudent + '\'' +
-                ", cccd='" + cccd + '\'' +
-                ", status='" + status + '\'' +
-                '}';
+    public void setEnrollDay(LocalDate enrollDay) {
+        this.enrollDay = enrollDay;
     }
 }

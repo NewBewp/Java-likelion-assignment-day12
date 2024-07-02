@@ -3,34 +3,17 @@ package day12.exersise.ClassManagement.Service;
 import day12.exersise.ClassManagement.Entity.Student;
 import day12.exersise.ClassManagement.Interfaces.StudentInterface;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
-public class StudentService implements StudentInterface<Student> {
-    private ArrayList<Student> students = new ArrayList<>();
-
-    public ArrayList<Student> getStudents() {
-        return students;
-    }
-
-    public void setStudents(ArrayList<Student> students) {
-        this.students = students;
-    }
+public class StudentService extends EntityService<Student> implements StudentInterface {
+    private Map<String, String> dropoutStudentList = new HashMap<>();
 
     @Override
-    public void insert(Student student) {
-        students.add(student);
-    }
-
-    @Override
-    public List<Student> findAll() {
-        return students;
-    }
-
-    @Override
-    public void showAll(){
-        for (Student student : students) {
-            System.out.println(student);
+    public void dropOutList(String idStudent, String reason){
+        Student student = getById(idStudent);
+        if(student != null){
+            dropoutStudentList.put(idStudent, reason);
         }
     }
 }

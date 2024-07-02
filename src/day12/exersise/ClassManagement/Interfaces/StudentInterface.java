@@ -1,10 +1,7 @@
 package day12.exersise.ClassManagement.Interfaces;
 
-import java.util.List;
+import day12.exersise.ClassManagement.Entity.Student;
 
-public interface StudentInterface<S> {
-    void insert(S Student);
-    List<S> findAll();
-    void showAll();
-
+public interface StudentInterface extends EntityInterface<Student> {
+    void dropOutList(String idStudent, String reason);
 }

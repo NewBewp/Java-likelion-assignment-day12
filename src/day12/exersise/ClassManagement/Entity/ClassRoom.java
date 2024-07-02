@@ -1,52 +1,40 @@
 package day12.exersise.ClassManagement.Entity;
 
+import java.util.ArrayList;
+import java.util.List;
 
-import java.util.HashSet;
+public class ClassRoom extends Entity{
+    private Teacher teacher;
+    private List<Student> students;
+    private boolean hasStarted;
 
-import java.util.Set;
-
-public class ClassRoom {
-    String idClass;
-    String nameClass;
-    Set<Integer> listIdStudent = new HashSet<>();
-
-    public ClassRoom (){}
-
-    public ClassRoom(String idClass, String nameClass) {
-        this.idClass = idClass;
-        this.nameClass = nameClass;
+    public ClassRoom(String idClass) {
+        this.id = idClass;
+        this.students = new ArrayList<Student>();
+        this.hasStarted = false;
     }
 
-    public String getIdClass() {
-        return idClass;
+    public Teacher getTeacher() {
+        return teacher;
     }
 
-    public void setIdClass(String idClass) {
-        this.idClass = idClass;
+    public void setTeacher(Teacher teacher) {
+        this.teacher = teacher;
     }
 
-    public String getNameClass() {
-        return nameClass;
+    public List<Student> getStudents() {
+        return students;
     }
 
-    public void setNameClass(String nameClass) {
-        this.nameClass = nameClass;
+    public void setStudents(List<Student> students) {
+        this.students = students;
     }
 
-    public Set<Integer> getListIdStudent() {
-        return listIdStudent;
+    public boolean isHasStarted() {
+        return hasStarted;
     }
 
-    public void setListIdStudent(Set<Integer> listIdStudent) {
-        this.listIdStudent = listIdStudent;
-    }
-
-    @Override
-    public String toString() {
-        return "ClassRoom{" +
-                "idClass=" + idClass +
-                ", nameClass='" + nameClass + '\'' +
-                ", listIdStudent=" + listIdStudent +
-                '}';
+    public void setHasStarted(boolean hasStarted) {
+        this.hasStarted = hasStarted;
     }
 }

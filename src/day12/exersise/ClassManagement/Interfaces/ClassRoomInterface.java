@@ -1,10 +1,12 @@
 package day12.exersise.ClassManagement.Interfaces;
 
-import java.util.List;
+import day12.exersise.ClassManagement.Entity.ClassRoom;
+import day12.exersise.ClassManagement.Entity.Student;
 
-public interface ClassRoomInterface<C> {
-    void insert(C ClassRoom);
-    List<C> findAll();
-    void showAll();
-    void enroll(C ClassRoom);
+//Mở rộng từ interface EntityService đặt thực thể là ClassRoom
+public interface ClassRoomInterface extends EntityInterface<ClassRoom> {
+    //phương thức thêm
+    void addStudentToClass(String idClass, Student student);
+    void startClass(String idClass);
+
 }

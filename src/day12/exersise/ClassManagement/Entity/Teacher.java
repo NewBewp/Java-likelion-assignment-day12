@@ -10,7 +10,7 @@ public class Teacher extends Entity{
     public Teacher (String idTeacher, String nameTeacher){
         this.id = idTeacher;
         this.nameTeacher = nameTeacher;
-        this.classRooms = new ArrayList<ClassRoom>(3);
+        this.classRooms = new ArrayList<ClassRoom>(2);
     }
 
     public String getNameTeacher() {
@@ -27,5 +27,14 @@ public class Teacher extends Entity{
 
     public void setClassRooms(List<ClassRoom> classRooms) {
         this.classRooms = classRooms;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "nameTeacher='" + nameTeacher + '\'' +
+                ", classRooms=" + classRooms +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

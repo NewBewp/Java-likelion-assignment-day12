@@ -11,8 +11,15 @@ public class ClassRoomService extends EntityService<ClassRoom> implements ClassR
     public void addStudentToClass(String idClassRoom, Student student){
         ClassRoom classRoom = getById(idClassRoom);
         if (idClassRoom != null ){
-            classRoom.getStudents().add(student);
-            System.out.println("addStudentToClass");
+            if (classRoom.getStudents().size()<10){
+                classRoom.getStudents().add(student);
+                System.out.println("addStudentToClass");
+                if (classRoom.getStudents().size()==10){
+                    startClass(idClassRoom);
+                }
+            }else {
+                throw new IllegalStateException("Classroom is full");
+            }
         }
     }
 
@@ -23,6 +30,7 @@ public class ClassRoomService extends EntityService<ClassRoom> implements ClassR
             classRoom.setHasStarted(true);
             for (Student student : classRoom.getStudents()) {
                 student.setEnrollDay(LocalDate.now());
+                System.out.println("startClass"+ classRoom.getId());
             }
         }
     }

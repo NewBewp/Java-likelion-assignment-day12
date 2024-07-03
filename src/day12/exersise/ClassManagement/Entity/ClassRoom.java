@@ -4,13 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassRoom extends Entity{
+
     private Teacher teacher;
     private List<Student> students;
     private boolean hasStarted;
 
     public ClassRoom(String idClass) {
         this.id = idClass;
-        this.students = new ArrayList<Student>();
+        this.students = new ArrayList<>();
         this.hasStarted = false;
     }
 
@@ -36,5 +37,15 @@ public class ClassRoom extends Entity{
 
     public void setHasStarted(boolean hasStarted) {
         this.hasStarted = hasStarted;
+    }
+
+    @Override
+    public String toString() {
+        return "ClassRoom{" +
+                "teacher=" + teacher +
+                ", students=" + students +
+                ", hasStarted=" + hasStarted +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

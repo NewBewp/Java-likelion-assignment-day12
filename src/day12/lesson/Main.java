@@ -1,4 +1,4 @@
-package day12;
+package day12.lesson;
 
 public class Main {
     public static void main(String[] args) {

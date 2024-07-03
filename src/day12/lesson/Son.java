@@ -1,4 +1,4 @@
-package day12;
+package day12.lesson;
 
 public class Son {
     public <T> T say(T doing) {

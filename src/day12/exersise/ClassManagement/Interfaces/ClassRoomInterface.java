@@ -8,5 +8,4 @@ public interface ClassRoomInterface extends EntityInterface<ClassRoom> {
     //phương thức thêm
     void addStudentToClass(String idClass, Student student);
     void startClass(String idClass);
-
 }

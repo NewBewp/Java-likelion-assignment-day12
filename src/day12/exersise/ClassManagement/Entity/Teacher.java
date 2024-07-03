@@ -10,7 +10,7 @@ public class Teacher extends Entity{
     public Teacher (String idTeacher, String nameTeacher){
         this.id = idTeacher;
         this.nameTeacher = nameTeacher;
-        this.classRooms = new ArrayList<ClassRoom>();
+        this.classRooms = new ArrayList<ClassRoom>(3);
     }
 
     public String getNameTeacher() {

@@ -11,7 +11,7 @@ public class Student extends Entity{
     private LocalDate enrollDay;
 
     public Student(String nameStudent, LocalDate birthDayStudent, String cccd, LocalDate enrollDay) {
-        this.id = "S" + idCounter;
+        this.id = "S" + idCounter++;
         this.nameStudent = nameStudent;
         this.birthDayStudent = birthDayStudent;
         this.cccd = cccd;
@@ -55,5 +55,16 @@ public class Student extends Entity{
 
     public void setEnrollDay(LocalDate enrollDay) {
         this.enrollDay = enrollDay;
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "nameStudent='" + nameStudent + '\'' +
+                ", birthDayStudent=" + birthDayStudent +
+                ", cccd='" + cccd + '\'' +
+                ", enrollDay=" + enrollDay +
+                ", id='" + id + '\'' +
+                '}';
     }
 }

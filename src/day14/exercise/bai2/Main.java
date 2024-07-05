@@ -7,6 +7,12 @@ public class Main {
     public static void main(String[] args) {
         int[] array = {3,7,18,25,77,300,101};
         findSecondMaxAndMin(array);
+
+
+        int a = 1;
+        double b=1.0;
+
+        System.out.println(a==b);
     }
 
     public static void findSecondMaxAndMin(int[] array) {

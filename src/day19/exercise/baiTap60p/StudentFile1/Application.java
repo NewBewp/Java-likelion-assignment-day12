@@ -54,16 +54,16 @@ public class Application {
     }
 
     public static List<String> readFile(String fileToRead) {
-        List<String> content = new ArrayList<>();
-        try (BufferedReader br = new BufferedReader(new FileReader(fileToRead))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                content.add(line);
+            List<String> content = new ArrayList<>();
+            try (BufferedReader br = new BufferedReader(new FileReader(fileToRead))) {
+                String line;
+                while ((line = br.readLine()) != null) {
+                    content.add(line);
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return content;
+            return content;
     }
 
     public static void createFile(String fileNameInput) {
